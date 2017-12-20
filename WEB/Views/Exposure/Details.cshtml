@@ -1,0 +1,52 @@
+﻿@using System.Data.Entity.Core.Mapping
+@model IEnumerable<WEB.Models.ArtworkForExposureModel>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+}
+
+<h2>Details</h2>
+@{
+
+
+
+
+    var d = Model.ToList();
+    var c = d[d.Count-1];
+        <h4>
+
+            This exposure will be presented by @c.ArtistName from @c.StartDate to @c.EndDate in the
+            @c.SpaceName for those that dosen't know it it's in @c.SpaceAddress and it's owned by @c.OwnerName
+            and those are the article that will be shown
+        </h4>
+    
+        }
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.photo)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            
+            <img src="~/Content/ArtworkImages/@item.photo" alt="Image" width="200" height="100" />
+        </td>
+        
+    </tr>
+}
+
+</table>

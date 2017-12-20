@@ -1,0 +1,73 @@
+﻿
+@model IEnumerable<Domain.Entity.message>
+
+    @{
+    ViewBag.Title = "Inbox";
+        Layout = "~/Views/Shared/_LayoutBack.cshtml";
+    }
+    <h2>List Messages</h2>
+
+                      @using (Html.BeginForm())
+                      {
+                      @Html.TextBox("s")
+                      <input type="submit" value="recherche" id="submit" />
+
+                      }
+
+    <table class="table">
+        <tr>
+            
+            <th>
+                @Html.Label("Subject ")
+            </th>
+            <th>
+                @Html.Label("Text ")
+            </th>
+            <th>
+                @Html.Label("Date :")
+            </th>
+
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem =>item.subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new {id=item.idMessage})
+              
+            </td>
+            <td>
+                @Html.ActionLink("Supprimer", "Delete", new {id=item.idMessage})
+
+            </td>
+            <td>
+                @Html.ActionLink("Repondre", "repondre", new {id=item.idMessage})
+
+            </td>
+        </tr>
+        }
+    </table>
+
+    <div>
+        
+        @Html.ActionLink("New Message", "Create")
+    </div>
+    <div>
+        @Html.ActionLink("Back to List", "profil")
+    </div>
+
+
+
+                      

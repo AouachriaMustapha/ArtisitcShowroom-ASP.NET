@@ -1,0 +1,73 @@
+﻿@model Domain.Entity.user
+@{
+    ViewBag.Title = "Profil";
+}
+
+<h2>Profil</h2>
+ 
+
+
+@section login{
+<li>
+    <a href="@Url.Action(" Profil/","user" )@Session["LogedUserid"].ToString()">Profile</a>
+</li>
+
+
+
+@section dis{
+<li>
+    <a href="@Url.Action(" ShoppingCart","Achat")">Pannier</a>
+</li>
+<li>
+    <a href="@Url.Action(" Logout","Login")">Disconnect </a>
+</li>
+
+}
+
+<div class="col-md-10" style="margin-left:300px;">
+
+    <table>
+        <tr>
+            <td>
+                <img src="" alt="Image" style="
+        width: 550px;
+        height: 350px;
+        border-radius: 150px;
+        -webkit-border-radius: 150px;
+        -moz-border-radius: 150px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);">
+            </td>
+        </tr>
+    </table>
+
+</div>
+<div>
+    <table class="form-group" style="margin-left:360px;">
+        <tr><td><br /></td></tr>
+        <tr>
+            <td style="width:250px;">@Html.Label("Login", htmlAttributes: new { @class = "control-label col-md-2" })</td>
+            <td>@Html.DisplayFor(modelItem => @model.login)</td>
+        </tr>
+        <tr><td><br /></td></tr>
+        <tr><td>@Html.Label("First Name", htmlAttributes: new { @class = "control-label col-md-2" })</td>  <td>@Html.DisplayFor(modelItem => @model.firstName)</td></tr>
+        <tr><td><br /></td></tr>
+        <tr><td>@Html.Label("Last Name", htmlAttributes: new { @class = "control-label col-md-2" })<td>@Html.DisplayFor(modelItem => @model.lastName)</td></tr>
+        <tr><td><br /></td></tr>
+        <tr><td>@Html.Label("Email", htmlAttributes: new { @class = "control-label col-md-2" }) <td>@Html.DisplayFor(modelItem => @model.mail )</td></tr>
+        <tr><td><br /></td></tr>
+        
+
+    </table>
+    <table class="form-group" style="width:850px;margin-left:150px">
+        <tr><td><br /></td></tr>
+        <tr>
+            <td><a class="btn btn-lg btn-block btn-danger " style="background-color:#3C763D" href="@Url.Action(" CreateProduct","Metting", new { id=Model.id })">Metting</a>
+            <td><a class="btn btn-lg btn-block btn-danger" style="background-color:#3C763D" href="@Url.Action( " MyProduct","Customer", new { id=Model.id })">Mes Produits</a>
+
+        </tr>
+
+    </table>
+
+</div>

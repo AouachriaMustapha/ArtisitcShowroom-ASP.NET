@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Domain.Entity.exposure>
+
+@{
+    ViewBag.Title = "afficher";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+}
+
+<h2>Exposure List</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.startDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.endDate)
+        </th>
+     
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.startDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.endDate)
+        </td>
+      
+        <td>
+            @Html.ActionLink("Find Space", "chercher", new { id=item.id }) 
+           
+        </td>
+    </tr>
+}
+
+</table>

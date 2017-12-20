@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Data.Models.space>
+
+@{
+    ViewBag.Title = "chercher";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+}
+
+<h2>Space</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Prix)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.fk_owner)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Prix)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.fk_owner)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

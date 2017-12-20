@@ -1,0 +1,87 @@
+﻿@model Domain.Entity.space
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+}
+<style>
+    a.my-class {color: #5fba7d;}
+        a.my-class:active { color: #5fba7d;}
+        a.my-class:link { color: #5fba7d;  }
+       a.my-class:visited { color: #5fba7d;  }
+</style>
+
+
+<div class="portlet light bordered">
+    <div class="portlet-title">
+        <div class="caption font-dark">
+            <i class="icon-settings font-dark"></i>
+            <span class="caption-subject bold uppercase"></span>
+        </div>
+        <div class="actions">
+            <div class="btn-group btn-group-devided" data-toggle="buttons">
+
+            </div>
+        </div>
+    </div>
+
+
+    <h2>Detail</h2>
+
+    
+    <table class="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer" id="mytable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.adress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rentalPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.pic)
+                </th>
+				<th>
+				 @Html.DisplayNameFor(model => model.owner_id)
+				  </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+           
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.adress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.rentalPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.description)
+                    </td>
+                    <td>
+                        <img src="~/Content/SpaceImages/@Model.pic" alt="Image" width="200" height="100" />
+            
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.owner_id)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </td>
+                </tr>
+            
+        </tbody>
+</table>
+</div>
+<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript" charset="utf8">
+        $(document).ready( function () {
+            $('#mytable').DataTable();
+        } );
+</script>

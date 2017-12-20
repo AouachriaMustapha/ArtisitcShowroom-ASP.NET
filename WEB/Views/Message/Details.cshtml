@@ -1,0 +1,86 @@
+﻿@model Domain.Entity.message
+
+@{
+    ViewBag.Title = "Details";
+Layout = "~/Views/Shared/_LayoutBack.cshtml";
+
+}
+<h2>Information sheet</h2>
+
+<h3>Message</h3>
+
+<a class="btn -dark _margin-bottom-sm" href="#" data-toggle="modal" data-target="#animated-modal-zoomInDown">Details</a>
+
+
+
+
+
+
+    <div class="modal animated -dark" id="animated-modal-zoomInDown" data-show="zoomInDown" data-hide="zoomOutDown">
+        <div class="modal-dialog">
+            <div class="modal-content -padded">
+                <div class="modal-header">
+                    <button class="modal-close" data-dismiss="modal">
+                        <i class="pe pe-close"></i>
+                    </button>
+                </div><div class="modal-body _text-center">
+    <div class="modal-icon">
+        <i class="pe pe-paper-plane"></i>
+    </div><h1 class="_margin-bottom-2x">Message</h1>
+    <h4 class="_margin-bottom-2x">Details</h4>
+
+    <hr />
+    <table align="center">
+        <tr>
+            <td>
+                @Html.Label("Date :", htmlAttributes: new { @class = "control-label col-md-2" })
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.date)
+            </td>
+             </tr>
+            <tr>
+            <td>
+                @Html.Label("Subject", htmlAttributes: new { @class = "control-label col-md-2" })
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.subject)
+            </td>
+            </tr>
+<tr>
+            <td>
+                @Html.Label("Text :", htmlAttributes: new { @class = "control-label col-md-2" })
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.text)
+            </td>
+
+</tr>
+<tr>
+            <td>
+                @Html.Label("Destination :", htmlAttributes: new { @class = "control-label col-md-2" })
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.user.firstName)
+            </td>
+</tr>
+
+    </table>
+
+    
+</div>
+            </div><div class="modal-footer _text-center">
+                <a class="btn -dark _margin-right-1x" data-dismiss="modal">Cancel</a>
+
+            </div>
+        </div>
+    </div>
+
+
+                <div>
+                    @Html.ActionLink("Back to List", "ListMessage")
+                </div>

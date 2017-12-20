@@ -1,0 +1,15 @@
+c:\users\mustapha-\documents\visual studio 2015\Projects\ArtisticShowroom\Domain\bin\Debug\Domain.dll
+c:\users\mustapha-\documents\visual studio 2015\Projects\ArtisticShowroom\Domain\bin\Debug\Domain.pdb
+c:\users\mustapha-\documents\visual studio 2015\Projects\ArtisticShowroom\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+c:\users\mustapha-\documents\visual studio 2015\Projects\ArtisticShowroom\Domain\obj\Debug\Domain.dll
+c:\users\mustapha-\documents\visual studio 2015\Projects\ArtisticShowroom\Domain\obj\Debug\Domain.pdb
+C:\Users\mustapha-\Documents\Visual Studio 2015\Projects\ArtisticShowroom\ArtisticShowroom\Domain\bin\Debug\Domain.dll
+C:\Users\mustapha-\Documents\Visual Studio 2015\Projects\ArtisticShowroom\ArtisticShowroom\Domain\bin\Debug\Domain.pdb
+C:\Users\mustapha-\Documents\Visual Studio 2015\Projects\ArtisticShowroom\ArtisticShowroom\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\mustapha-\Documents\Visual Studio 2015\Projects\ArtisticShowroom\ArtisticShowroom\Domain\obj\Debug\Domain.dll
+C:\Users\mustapha-\Documents\Visual Studio 2015\Projects\ArtisticShowroom\ArtisticShowroom\Domain\obj\Debug\Domain.pdb
+C:\Users\mustapha-\Documents\Visual Studio 2015\Projects\ArtisticShowroom\ArtisticShowroom\Domain\bin\Debug\Domain.dll.config
+C:\Users\mustapha-\Documents\Visual Studio 2015\Projects\ArtisticShowroom\ArtisticShowroom\Domain\bin\Debug\EntityFramework.dll
+C:\Users\mustapha-\Documents\Visual Studio 2015\Projects\ArtisticShowroom\ArtisticShowroom\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mustapha-\Documents\Visual Studio 2015\Projects\ArtisticShowroom\ArtisticShowroom\Domain\bin\Debug\EntityFramework.xml
+C:\Users\mustapha-\Documents\Visual Studio 2015\Projects\ArtisticShowroom\ArtisticShowroom\Domain\bin\Debug\EntityFramework.SqlServer.xml

@@ -1,0 +1,91 @@
+﻿
+@model IEnumerable<Domain.Entity.metting>
+
+    @{
+    ViewBag.Title = "profil";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+    }
+
+    <h2>My Profil</h2>
+   
+
+
+    @{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+    }
+
+    <img class="-responsive -round _margin-1x" src="~/Content/uplodimg/mustapha.jpg" width="400" height="300" alt="Image" />
+                      <table>
+                          <tr>
+                              <td> Name :</td>
+                              <td>
+                                  <h4>@Session["LogedUserLogin"]</h4>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>Email :</td>
+                              <td>
+                                 <h4>@Session["Logedusermail"]</h4>
+                              </td>
+                          </tr>
+                         
+                      </table>
+    <h2>List Mettings</h2>
+
+   
+
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.Label("Date")
+            </th>
+            <th>
+                @Html.Label("Place")
+            </th>
+
+            <th>
+                @Html.Label("Etat")
+            </th>
+             
+            <th>
+                @Html.Label("Ower")
+            </th>
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model) {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.mettingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.etat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.firstName)
+            </td>
+            <td>
+                @Html.ActionLink("Detail", "detail", new {id=item.fk_owner})
+
+            </td>
+
+            <td>
+                @Html.ActionLink("Supprimer", "Delete", new {id1=item.fk_artist,id2=item.fk_owner,e=item.etat,p=item.place})
+
+            </td>
+
+        </tr>
+        }
+    </table>
+
+    
+    <a href="@Url.Action("Index", "Metting" )">metting list</a>
+    

@@ -1,0 +1,146 @@
+﻿@using WEB.Models
+@model IEnumerable<WEB.Models.ArtworkForExposureModel>
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+}
+
+<h2>Edit</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+                      <style>
+                          ul, ol, li {
+                              margin: 0;
+                              padding: 0;
+                              list-style: none;
+                          }
+
+                          .reorder_link {
+                              color: #3675B4;
+                              border: solid 2px #3675B4;
+                              border-radius: 3px;
+                              text-transform: uppercase;
+                              background: #fff;
+                              font-size: 18px;
+                              padding: 10px 20px;
+                              margin: 15px 15px 15px 0px;
+                              font-weight: bold;
+                              text-decoration: none;
+                              transition: all 0.35s;
+                              -moz-transition: all 0.35s;
+                              -webkit-transition: all 0.35s;
+                              -o-transition: all 0.35s;
+                              white-space: nowrap;
+                          }
+
+                              .reorder_link:hover {
+                                  color: #fff;
+                                  border: solid 2px #3675B4;
+                                  background: #3675B4;
+                                  box-shadow: none;
+                              }
+
+                          #reorder-helper {
+                              margin: 18px 10px;
+                              padding: 10px;
+                          }
+
+                          .light_box {
+                              background: #efefef;
+                              padding: 20px;
+                              margin: 10px 0;
+                              text-align: center;
+                              font-size: 1.2em;
+                          }
+
+                          .gallery {
+                              width: 100%;
+                              float: left;
+                              margin-top: 100px;
+                          }
+
+                              .gallery ul {
+                                  margin: 0;
+                                  padding: 0;
+                                  list-style-type: none;
+                              }
+
+                                  .gallery ul li {
+                                      padding: 7px;
+                                      border: 2px solid #ccc;
+                                      float: left;
+                                      margin: 10px 7px;
+                                      background: none;
+                                      width: auto;
+                                      height: auto;
+                                  }
+
+                              .gallery img {
+                                  width: 250px;
+                              }
+
+                          /* NOTICE */
+                          .notice, .notice a {
+                              color: #fff !important;
+                          }
+
+                          .notice {
+                              z-index: 8888;
+                          }
+
+                              .notice a {
+                                  font-weight: bold;
+                              }
+
+                          .notice_error {
+                              background: #E46360;
+                          }
+
+                          .notice_success {
+                              background: #657E3F;
+                          }
+                      </style>
+
+<input type="text" name="Order" id="Order"/>
+                      <div style="margin-top:50px;">
+                          <a href="javascript:void(0);" class="btn outlined mleft_no reorder_link" id="save_reorder">reorder photos</a>
+                          <div id="reorder-helper" class="light_box" >1. Drag photos to reorder.<br>2. Click 'Save Reordering' when finished.</div>
+                          <div class="gallery" >
+                              <ul class="reorder_ul reorder-photos-list" id="azee">
+
+
+                                  @{
+                                  ArtworkDetailsModel ar=new ArtworkDetailsModel();
+
+                                  var  LA=Model;
+
+                                  
+                                  foreach (var z in LA)
+                                  {
+                                  <li id="image_li_@z.id" class="ui-sortable-handle"><a href="javascript:void(0);" style="float:none;" class="image_link" target="_self"><img src="/Content/ArtworkImages/@z.photo" alt="image"></a></li>
+                                  }
+                                  
+                                  }
+
+                              </ul>
+                          </div>
+                      </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+   
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+    @Scripts.Render("~/bundles/jqueryval")
+

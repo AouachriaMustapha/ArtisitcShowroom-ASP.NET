@@ -1,0 +1,39 @@
+﻿
+@model Domain.Entity.user
+
+@{
+    ViewBag.Title = "profilowner";
+Layout = "~/Views/Shared/_LayoutBack.cshtml";
+}
+
+<h2>My Profil </h2>
+
+<h3>@Session["LogedUserLogin"]</h3>
+
+<img  class="-responsive -round _margin-1x" src="~/Content/uplodimg/mustapha.jpg" width="400" height="300" alt="Image"/>
+
+<table>
+<tr>
+<td>Full Name :</td>
+<td>
+    @Html.DisplayFor(model => model.firstName)
+    @Html.DisplayFor(model => model.lastName)
+</td>
+</tr>
+    <tr>
+        <td>Email :</td>
+        <td>
+            @Html.DisplayFor(model => model.mail)
+        </td>
+    </tr>
+    <tr>
+        <td>Adress :</td>
+        <td>
+            @Html.DisplayFor(model => model.city)
+        </td>
+    </tr>
+</table>
+
+
+<a href="@Url.Action("listOwnerMetting", "Metting" )">metting list</a>
+<a href="@Url.Action("OHistorymetting", "Metting" )">Archive</a>

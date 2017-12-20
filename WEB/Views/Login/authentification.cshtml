@@ -1,0 +1,61 @@
+﻿@model Domain.Entity.user
+
+@{
+    ViewBag.Title = "authentification";
+Layout = "~/Views/Shared/Error.cshtml";
+}
+
+<h2>authentification</h2>
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @*if (@ViewBag.Message != null)
+    {
+<div style="border: 1px solid red">
+    @ViewBag.Message
+</div>
+    }*@
+
+<div class="col -xs-12">
+    <div class="panel -dark -focused">
+        <div class="panel-heading -dark -with-icon-lg"> <i class="pe pe-angle-right-circle"></i> <h3>Sign In</h3><span>Please enter your account credentials</span></div>
+
+
+        <br />
+        <br />
+
+
+
+
+        <table style="width: 700px;">
+            <tr>
+                <td>Login</td>
+                <td>
+                    @Html.EditorFor(model => model.login)
+                    @Html.ValidationMessageFor(model => model.login)
+                </td>
+            </tr>
+            <tr><td><br /></td></tr>
+            <tr>
+                <td>Password</td>
+                <td>@Html.PasswordFor(model => model.password)</td>
+                <td>@Html.ValidationMessageFor(model => model.password)</td>
+            </tr>
+
+        </table>
+        <br />
+
+        <table>
+            <tr>
+
+
+                <td><button class="btn -primary _pull-right" type="submit" name="signup">Signin</button></td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+}

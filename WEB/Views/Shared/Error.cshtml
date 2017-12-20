@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+    <meta charset="UTF-8">
+    <!-- Page Title --><!-- The page title appears as the browser tab label, used for bookmarks -->
+    <title>Artistic Showroom</title>
+    <!-- Page Meta --><!-- The page meta is used by search engines to provide useful information about the site -->
+    <meta name="description" content="Volta is a futuristic Web Application and Admin Dashboard built with Bootstrap, Stylus and CoffeeScript. From a developer trusted by thousands of users.">
+    <meta name="keywords" content="volta, admin, volta admin, dashboard, web, application, template, theme, admin dashboard, admin template, admin theme, web application template, dashboard template, pixevil, pixevil themes, grozav">
+    <meta name="author" content="Alex Grozav (Pixevil)">
+    <!-- Viewport -->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href=@Url.Content("Content/icon/apple-touch-icon.png")>
+    <link rel="icon" type="image/png" href=@Url.Content("/Content/icon/favicon-32x32.png") sizes="32x32">
+    <link rel="icon" type="image/png" href=@Url.Content("/Content/icon/favicon-16x16.png") sizes="16x16">
+    <link rel="manifest" href=@Url.Content("/Content/icon/manifest.json")>
+    <link rel="mask-icon" href=@Url.Content("/Content/icon/safari-pinned-tab.svg") color="#ff1643">
+    <link rel="shortcut icon" href="@Url.Content("/Content/icon/favicon.ico")">
+    <meta name="msapplication-config" content="icon/browserconfig.xml">
+    <meta name="theme-color" content="#ff1643">
+    <meta property="og:title" content="Volta - Web Application and Admin Dashboard">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="../volta.html">
+    <meta property="og:image" content="../img/template-thumbnails/volta.html">
+    <meta property="og:site_name" content="pixevil">
+
+
+    <!-- Application CSS -->
+    <link href=@Url.Content("/Content/css/bootstrap/bootstrap.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/animate/animate.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/nanoscroller/nanoscroller.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/metis-menu/metis-menu.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/perfect-scrollbar/perfect-scrollbar.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/icons/pixeden-stroke-icons.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/icons/font-awesome-icons.min.css") rel="stylesheet" type="text/css">
+    <!-- Application Theme -->
+    <link href=@Url.Content("/Content/css/application/application.min.css") rel="stylesheet" type="text/css">
+    <!-- Page Specific Links -->
+</head>
+<body data-themeable="true" itemscope itemtype="http://schema.org/WebPage">
+    <!-- Navbar --><div class="navbar -dark -fixed-top -has-5-items">
+        <div class="navbar-wrapper">
+            <a class="navbar-brand" href="index.html">
+                <span class="hidden-sm-up"></span>
+                <span class="hidden-xs-down">Artistic showroom</span>
+            </a>
+            <ul class="navbar-nav -right">
+
+                <li class="navbar-profile"><a class="has-morph-dropdown" href="#profile-dropdown"> <i class="pe pe-user"></i> </a></li>
+                <li id="right-sidebar-toggle"><a href="javascript:void(0);"> <i class="pe pe-edit -rotate-90"></i> </a></li>
+            </ul>
+            <div class="morph-dropdown-wrapper -dark -right">
+                <div class="morph-dropdown-list -links">
+
+
+                   
+                </div>
+            </div>
+        </div>
+    </div><!-- /Navbar -->
+    <!-- /Left Sidebar -->
+
+    <div class="content -dark -with-left-sidebar -collapsible">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col -lg-12">
+                    @RenderBody()
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Theme -->
+    <script src=@Url.Content("/Content/js/themes/base.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/themes/volta.min.js") type="text/javascript"></script>
+    <!-- Document -->
+    <script src=@Url.Content("/Content/js/jquery/jquery.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/tether/tether.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/moment/moment.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/bootstrap/bootstrap.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/validator/validator.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/perfect-scrollbar/perfect-scrollbar.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/datepicker/datepicker.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/cookie/cookie.min.js") type="text/javascript"></script>
+    <!-- Animations -->
+    <script src=@Url.Content("/Content/js/gsap/tweenlite.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/gsap/plugins/css.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/gsap/easing/easepack.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/animus/animus.min.js") type="text/javascript"></script>
+    <!-- Notifications -->
+    <script src=@Url.Content("/Content/js/gritter/gritter.min.js") type="text/javascript"></script>
+    <!-- Analytics -->
+    <script src=@Url.Content("/Content/js/googleanalytics/googleanalytics.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/hotjar/hotjar.min.js") type="text/javascript"></script>
+    <!-- Sidebar -->
+    <script src=@Url.Content("/Content/js/metis-menu/metis-menu.min.js") type="text/javascript"></script>
+    <!-- Application Components -->
+    <script src=@Url.Content("/Content/js/application/components/morph-dropdown.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/application/components/navbar.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/application/components/panel.min.js") type="text/javascript"></script>
+    <!-- Allow Theme Cookies -->
+    <script src=@Url.Content("/Content/js/themes/themeable.min.js") type="text/javascript"></script>
+    <!-- Application -->
+    <script src=@Url.Content("/Content/js/application/application.min.js") type="text/javascript"></script>
+    <!-- Page Specific Scripts -->
+    <script src=@Url.Content("/Content/js/sparkline/sparkline.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/flot/jquery.flot.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/flot/jquery.flot.pie.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/flot/jquery.flot.resize.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/flot/jquery.flot.animator.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/application/views/index.min.js") type="text/javascript"></script>
+</body>
+</html>

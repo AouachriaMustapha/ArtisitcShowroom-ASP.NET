@@ -1,0 +1,67 @@
+﻿@model WEB.Models.MettingModels
+
+@{
+    ViewBag.Title = "Meet";
+Layout = "~/Views/Shared/_LayoutBack.cshtml";
+
+}
+
+<h2>Metting Form</h2>
+@using (Html.BeginForm())
+{
+   
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @*if (@ViewBag.Message != null)
+    {
+<div style="border: 1px solid red">
+    @ViewBag.Message
+</div>
+    }*@
+
+<div class="well" style="width:800px;
+padding-left:200px;
+margin-left:170px;">
+    <div>
+        <table style="width:700px;">
+            <tr>
+                <td>Place of Metting</td>
+                <td>
+                    @Html.EditorFor(model=> model.place)
+                    @Html.ValidationMessageFor(model => model.place)
+                </td>
+            </tr>
+             <tr>
+                <td>Date Of Metting</td>
+                <td><div>
+                    @Html.EditorFor(model => model.mettingDate, new { htmlAttributes = new { @class = "form-control" } })
+                   </div> 
+               </td>
+            </tr>
+            <tr>
+                <td>List of Owners</td>
+                <td>
+                    
+                    @Html.DropDownListFor(model => model.UserId, Model.users,"Choise Owner To meet")
+</td>
+            </tr>
+            <tr><td><br /></td></tr>
+            
+
+        </table>
+        <br />
+
+        <table>
+            <tr>
+
+                <td><input type="submit" value="Meet" class="btn btn-success" style="width:360px;" /></td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

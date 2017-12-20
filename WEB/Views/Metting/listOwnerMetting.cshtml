@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Domain.Entity.metting>
+
+    @{
+    ViewBag.Title = "ListOwnerMetting";
+     Layout = "~/Views/Shared/_LayoutBack.cshtml";
+
+    }
+
+    <h2>List Mettings</h2>
+
+
+    <table class="table">
+        <tr>
+            
+
+            <th>
+                @Html.DisplayNameFor(model => model.mettingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.place)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.etat)
+            </th>
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.mettingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.etat)
+            </td>
+            <td>
+
+                
+                @Html.ActionLink("Confirm", "Confirm", new {id1=item.fk_artist,id2=item.fk_owner,e=item.etat,p=item.place})
+
+            </td>
+
+            <td>
+                @Html.ActionLink("Supprimer", "Delete", new {id1=item.fk_artist,id2=item.fk_owner,e=item.etat,p=item.place})
+
+            </td>
+
+        </tr>
+        }
+    </table>
+
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+

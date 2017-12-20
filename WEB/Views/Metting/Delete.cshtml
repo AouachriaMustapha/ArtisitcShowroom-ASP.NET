@@ -1,0 +1,52 @@
+﻿
+@model WEB.Models.MettingModels
+
+@{
+    ViewBag.Title = "Delete";
+Layout = "~/Views/Shared/_LayoutBack.cshtml";
+}
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Metting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Date Of metting", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mettingDate)
+        </dd>
+
+        <dt>
+            @Html.Label("place", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.place)
+        </dd>
+        <dt>
+            @Html.Label("An appointment with", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u.firstName)
+            @Html.DisplayFor(model => model.u.lastName)
+        </dd>
+
+
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> 
+
+    </div>
+    }
+</div>

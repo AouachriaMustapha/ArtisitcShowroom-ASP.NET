@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+    <meta charset="UTF-8">
+    <!-- Page Title --><!-- The page title appears as the browser tab label, used for bookmarks -->
+    <title>Artistic Showroom</title>
+    <!-- Page Meta --><!-- The page meta is used by search engines to provide useful information about the site -->
+    <meta name="description" content="Volta is a futuristic Web Application and Admin Dashboard built with Bootstrap, Stylus and CoffeeScript. From a developer trusted by thousands of users.">
+    <meta name="keywords" content="volta, admin, volta admin, dashboard, web, application, template, theme, admin dashboard, admin template, admin theme, web application template, dashboard template, pixevil, pixevil themes, grozav">
+    <meta name="author" content="Alex Grozav (Pixevil)">
+    <!-- Viewport -->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href=@Url.Content("Content/icon/apple-touch-icon.png")>
+    <link rel="icon" type="image/png" href=@Url.Content("/Content/icon/favicon-32x32.png") sizes="32x32">
+    <link rel="icon" type="image/png" href=@Url.Content("/Content/icon/favicon-16x16.png") sizes="16x16">
+    <link rel="manifest" href=@Url.Content("/Content/icon/manifest.json")>
+    <link rel="mask-icon" href=@Url.Content("/Content/icon/safari-pinned-tab.svg") color="#ff1643">
+    <link rel="shortcut icon" href="@Url.Content("/Content/icon/favicon.ico")">
+    <meta name="msapplication-config" content="icon/browserconfig.xml">
+    <meta name="theme-color" content="#ff1643">
+    <meta property="og:title" content="Volta - Web Application and Admin Dashboard">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="../volta.html">
+    <meta property="og:image" content="../img/template-thumbnails/volta.html">
+    <meta property="og:site_name" content="pixevil">
+
+
+    <!-- Application CSS -->
+    <link href=@Url.Content("/Content/css/bootstrap/bootstrap.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/animate/animate.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/nanoscroller/nanoscroller.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/metis-menu/metis-menu.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/perfect-scrollbar/perfect-scrollbar.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/icons/pixeden-stroke-icons.min.css") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/css/icons/font-awesome-icons.min.css") rel="stylesheet" type="text/css">
+    <!-- Application Theme -->
+    <link href=@Url.Content("/Content/css/application/application.min.css") rel="stylesheet" type="text/css">
+    <!-- Page Specific Links -->
+</head>
+<body data-themeable="true" itemscope itemtype="http://schema.org/WebPage">
+    <!-- Navbar --><div class="navbar -dark -fixed-top -has-5-items">
+        <div class="navbar-wrapper">
+            <a class="navbar-brand" href="index.html">
+<span class="hidden-sm-up"></span>
+<span class="hidden-xs-down">Artistic showroom</span></a>
+<ul class="navbar-nav -right">
+
+<li class="navbar-profile"><a class="has-morph-dropdown" href="#profile-dropdown"> <i class="pe pe-user"></i> </a></li>
+<li id="right-sidebar-toggle"><a href="javascript:void(0);"> <i class="pe pe-edit -rotate-90"></i> </a></li></ul>
+<div class="morph-dropdown-wrapper -dark -right">
+                <div class="morph-dropdown-list -links">
+                    
+
+<div class="morph-dropdown" id="profile-dropdown">
+                        <div class="morph-content -links">
+                            <div class="morph-profile">
+                                <!-- Image --><p> Web Artistic Showroom</p>
+                            </div>
+<ul class="morph-links">
+<li><a href="@Url.Action("profil", "Login" )">My Profile</a></li>
+
+</ul><div class="_margin-top-1x"><a href="@Url.Action("Logout", "Login" )">Sign Out</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /Navbar -->
+    <!-- Left Sidebar --><div class="sidebar -dark -left -collapsible" id="sidebar">
+<div class="nano"><div class="nano-content">
+<div class="sidebar-wrapper"><ul class="sidebar-menu metismenu">
+    <li class="sidebar-heading">Application</li>
+    <li class="-active">
+        <a href="@Url.Action("profil", "Login" )"> <i class="pe pe-home"></i> <span>Dashboard</span></a>
+    </li>
+    <li class="">
+        <a href="#">
+            <i class="pe pe-mail"></i> <span>Messages</span><span class="fa arrow">
+            </span>
+        </a><ul>
+            <li class=""><a href="@Url.Action("Create", "Message" )">Compose</a></li>
+            <li class="">
+                <a href="@Url.Action("Inbox", "Message" )">Inbox</a>
+            </li>
+            <li class="">
+                <a href="@Url.Action("ListMessage", "Message" )">Preview</a>
+            </li>
+        </ul>
+    </li>
+    <li class="sidebar-heading">Components</li>
+    <li class="">
+        <a href="#">
+            <i class="pe pe-box2"></i>
+            <span>Tasks</span><span class="fa arrow"></span>
+        </a><ul>
+            <li class=""><a href="@Url.Action("Meet", "Metting" )">Make a meet</a>
+
+
+        </ul>
+    </li>
+
+    <li class="sidebar-heading">Application</li>
+    <li class="-active">
+        <a href="~/Space/Index">
+            <i class="pe pe-home"></i> <span>Space List </span>
+        </a>
+    </li>
+    <li class="">
+        <a href="~/Space/Create">
+            <i class="pe pe-edit"></i>
+            <span>Space Create</span>
+        </a>
+    </li>
+
+                                 <li class="">
+                                     <a href=@Url.Content("/Artwork/Index")>
+                                         <i class="pe pe-date"></i>
+                                         <span>Artwork</span>
+                                     </a>
+                                 </li>
+                                 <li class="">
+                                     <a href=@Url.Content("/Exposure/Index")>
+                                         <i class="pe pe-mail"></i> <span>Exposure</span>
+                                         <span class="fa arrow"></span>
+                                     </a>
+
+
+
+
+
+<li class="">
+        <a href="#"> <i class="pe pe-edit"></i> <span>API</span><span class="fa arrow"></span></a>
+        <ul>
+            <li class=""><a href="~/Space/Chart">Chart</a></li>
+            <li class="">
+                <a href="~/Space/MapEventByRegion">Map</a></li>
+            <li class="">
+                <a href="~/Space/afficher">
+                    <i class="pe pe-edit"></i> <span>Exposure List</span>
+                </a>
+            </li>
+    </li>
+
+
+
+</ul>
+</div>
+</div>
+</div>
+</div><!-- /Left Sidebar -->
+
+    <div class="content -dark -with-left-sidebar -collapsible">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col -lg-12">
+                    @RenderBody()
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Theme -->
+    <script src=@Url.Content("/Content/js/themes/base.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/themes/volta.min.js") type="text/javascript"></script>
+    <!-- Document -->
+    <script src=@Url.Content("/Content/js/jquery/jquery.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/tether/tether.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/moment/moment.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/bootstrap/bootstrap.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/validator/validator.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/perfect-scrollbar/perfect-scrollbar.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/datepicker/datepicker.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/cookie/cookie.min.js") type="text/javascript"></script>
+    <!-- Animations -->
+    <script src=@Url.Content("/Content/js/gsap/tweenlite.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/gsap/plugins/css.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/gsap/easing/easepack.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/animus/animus.min.js") type="text/javascript"></script>
+    <!-- Notifications -->
+    <script src=@Url.Content("/Content/js/gritter/gritter.min.js") type="text/javascript"></script>
+    <!-- Analytics -->
+    <script src=@Url.Content("/Content/js/googleanalytics/googleanalytics.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/hotjar/hotjar.min.js") type="text/javascript"></script>
+    <!-- Sidebar -->
+    <script src=@Url.Content("/Content/js/metis-menu/metis-menu.min.js") type="text/javascript"></script>
+    <!-- Application Components -->
+    <script src=@Url.Content("/Content/js/application/components/morph-dropdown.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/application/components/navbar.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/application/components/panel.min.js") type="text/javascript"></script>
+    <!-- Allow Theme Cookies -->
+    <script src=@Url.Content("/Content/js/themes/themeable.min.js") type="text/javascript"></script>
+    <!-- Application -->
+    <script src=@Url.Content("/Content/js/application/application.min.js") type="text/javascript"></script>
+    <!-- Page Specific Scripts -->
+    <script src=@Url.Content("/Content/js/sparkline/sparkline.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/flot/jquery.flot.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/flot/jquery.flot.pie.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/flot/jquery.flot.resize.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/flot/jquery.flot.animator.min.js") type="text/javascript"></script>
+    <script src=@Url.Content("/Content/js/application/views/index.min.js") type="text/javascript"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script src=@Url.Content("/Content/image-picker/image-picker.js") type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href=@Url.Content("/Content/image-picker/image-picker.css")>
+    <script type="text/javascript">
+
+    $("select").imagepicker({
+        hide_select: true,
+        show_label: true
+    })
+
+    function Priority() {
+        var values = $('select').val();
+
+        var xx = "";
+        for (a in values) {
+
+            xx = xx + values[a];
+        }
+
+        document.getElementById("azee").innerHTML = xx;
+        document.getElementById("select").style.display = "none"
+        document.getElementsByClassName("thumbnails image_picker_selector")[0].style.display = "none"
+
+        document.getElementById("azee").style.display = "block";
+        document.getElementsByClassName("gallery")[0].style.display = "block";
+    }
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.reorder_link').on('click', function() {
+            $("ul.reorder-photos-list").sortable({ tolerance: 'pointer' });
+            $('.reorder_link').html('save reordering');
+            $('.reorder_link').attr("id", "save_reorder");
+            $('#reorder-helper').slideDown('slow');
+            $('.image_link').attr("href", "javascript:void(0);");
+            $('.image_link').css("cursor", "move");
+            $("#save_reorder").click(function(e) {
+                if (!$("#save_reorder i").length) {
+
+                    $("ul.reorder-photos-list").sortable('destroy');
+                    $("#reorder-helper").html("Done.").removeClass('light_box').addClass('notice notice_success');
+
+                    var h = [];
+                    $("ul.reorder-photos-list li").each(function() { h.push($(this).attr('id').substr(9)); });
+                    document.getElementById("Order").value = h;
+
+
+                }
+                e.preventDefault();
+            });
+        });
+    });
+    </script>
+
+
+</body>
+</html>

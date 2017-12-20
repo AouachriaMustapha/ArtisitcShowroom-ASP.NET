@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Domain.Entity.metting>
+
+    @{
+    ViewBag.Title = "OHistorymetting";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+    }
+
+    <h2>ARCHIVE Metting</h2>
+
+    <table class="table">
+        <tr>
+
+
+            <th>
+                @Html.Label("Date")
+            </th>
+            <th>
+                @Html.Label("Place")
+            </th>
+
+            <th>
+                @Html.Label("Etat")
+            </th>
+            <th>
+                @Html.Label("Artist")
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model) {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.mettingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.etat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.firstName)
+                @Html.DisplayFor(modelItem => item.user.lastName)
+            </td>
+
+        </tr>
+        }
+    </table>

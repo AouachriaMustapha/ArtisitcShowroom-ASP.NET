@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Domain.Entity.rentspace>
+
+    @{
+    ViewBag.Title = "Desponibility";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+    }
+
+    <h2>Desponibility</h2>
+
+                      <table class="table">
+                          <tr>
+
+
+                              <th>
+                                  @Html.Label("Name")
+                              </th>
+                              <th>
+                                  @Html.Label("Owner")
+                              </th>
+
+                              <th>
+                                  @Html.Label("artist")
+                              </th>
+                              <th>
+                                  @Html.Label("Date of rent")
+                              </th>
+                              <th>
+                                  @Html.Label("Price")
+                              </th>
+
+                              <th></th>
+                          </tr>
+
+                          @foreach (var item in Model) {
+                          <tr>
+
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.space.name)
+                              </td>
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.user1.firstName)
+                                  @Html.DisplayFor(modelItem => item.user1.lastName)
+                              </td>
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.user.firstName)
+                                  @Html.DisplayFor(modelItem => item.user.lastName)
+                              </td>
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.rentDate)
+                              </td>
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.price)
+                              </td>
+
+                          </tr>
+                          }
+                      </table>
+
+                      <div>
+                          @Html.ActionLink("Back ", "profil")
+                      </div>

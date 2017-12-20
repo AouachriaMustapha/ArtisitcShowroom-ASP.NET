@@ -1,0 +1,94 @@
+﻿@model Domain.Entity.space
+
+@{
+    ViewBag.Title = "louer";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+}
+
+<h2>Rent Space</h2>
+<h3>This is  the Space you Want to rent is owen by M.@Html.DisplayFor(model =>model.user.firstName)</h3>
+
+
+<table align="center">
+    @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+<tr></tr>
+    <td>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.Label("Name :", htmlAttributes: new { @class = "control-label col-md-2" })
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+
+            <dt>
+                @Html.Label("Description :", htmlAttributes: new { @class = "control-label col-md-2" })
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.description)
+            </dd>
+
+            <dt>
+                @Html.Label("Owner :", htmlAttributes: new { @class = "control-label col-md-2" })
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user.firstName)
+                @Html.DisplayFor(model => model.user.lastName)
+            </dd>
+            <dt>
+                @Html.Label("Date rent", htmlAttributes: new { @class = "control-label col-md-2" })
+            </dt>
+
+            <dd>
+                @Html.EditorFor(model => model.rentdate)
+            </dd>
+
+
+            <dt>
+                <a class="btn -dark _margin-bottom-sm" href="#" data-toggle="modal" data-target="#animated-modal-">Show Picture</a>
+            </dt>
+
+
+        </dl>
+    </td>
+<div class="form-actions no-color">
+
+        <input type="submit" value="Rent" class="btn btn-info" />
+    </div>
+    }
+
+</table>
+
+    <div class="modal animated -dark" id="animated-modal-" data-show="" data-hide="hinge">
+        <div class="modal-dialog">
+            <div class="modal-content -padded">
+                <div class="modal-header">
+                    <button class="modal-close" data-dismiss="modal">
+                        <i class="pe pe-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body _text-center">
+                    <div class="modal-icon">
+                        <i class="pe pe-paper-plane">
+                        </i>
+                    </div>
+                    <h1 class="_margin-bottom-2x">Space's Name : @Html.DisplayFor(model =>model.name)</h1>
+                    <h4 class="_margin-bottom-2x"> Price : @Html.DisplayFor(model =>model.rentalPrice)</h4>
+                    <p>
+                        <img src="~/Content/uplodimg/@Model.pic" alt="Image" width="400" height="300" />
+                    </p>
+                </div>
+                <div class="modal-footer _text-center">
+
+                    
+                    <a class="btn -dark _margin-right-1x" data-dismiss="modal">Cancel</a>
+
+                
+            </div>
+        </div>
+    </div>
+</div>

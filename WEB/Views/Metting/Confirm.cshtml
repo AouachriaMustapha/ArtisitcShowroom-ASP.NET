@@ -1,0 +1,56 @@
+﻿@model WEB.Models.MettingModels
+@{
+    ViewBag.Title = "Confirm";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+}
+
+
+
+  @using (Html.BeginForm())
+ {
+    @Html.AntiForgeryToken()
+<h2>Confirm</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Date Of metting", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mettingDate)
+        </dd>
+
+        <dt>
+            @Html.Label("place", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+        
+        <dd>
+            @Html.DisplayFor(model => model.place)
+        </dd>
+        <dt>
+            @Html.Label("An appointment with", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u.firstName)
+            @Html.DisplayFor(model => model.u.lastName)
+        </dd>
+       
+
+    </dl>
+
+  
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Confirm" class="btn btn-default" /> |
+
+    </div>
+  
+</div>
+
+}
+<div>
+    @Html.ActionLink("Back ", "ListOwnerMetting")
+</div>
